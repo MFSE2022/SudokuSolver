@@ -9,6 +9,17 @@ namespace SudokuSolver {
     private int[,] board;
     private bool[,] fixedNumbers;
 
+    public override string ToString () {
+      StringBuilder sb = new();
+      for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+         sb.Append(board[i, j] + " ");
+      }
+        sb.AppendLine();
+      }
+      return  sb.ToString();
+    }
+
     public SudokuBoard() {
       board = new int[size, size];
       fixedNumbers = new bool[size, size];
